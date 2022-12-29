@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika&display=swap");
+:root {
+  --mainColor: rgb(95, 95, 238);
+  --boxShadow: 2px 2px 4px #ccc, -2px -2px 4px #ccc;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  font-family: "Andika";
+}
