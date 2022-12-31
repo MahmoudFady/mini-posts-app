@@ -1,0 +1,28 @@
+extends ../layout.pug
+block content
+    .row.auth
+        - if(errors)
+            each msg in errors
+                .col-xs-10-col-sm-8.col-md-6
+                    include ../components/alert
+        .col-xs-10-col-sm-8.col-md-6
+            form(action="signup" , method="post") 
+                .form-group 
+                    h3 signup
+                input(type="hidden" name="_csrf" value=csrfToken)
+                .form-group
+                    i.fa-solid.fa-user
+                    input.form-control(type="text" placeholder="name . . ." name="name")
+                .form-group
+                    i.fa-solid.fa-envelope
+                    input.form-control(type="email" placeholder="email . . ." name="email")
+                .form-group
+                    i.fa-solid.fa-lock
+                    input.form-control(type="password" placeholder="password . . ." name="password")
+                .form-group
+                    button(type="submit" class="btn") 
+                        i.fa-solid.fa-arrow-right-to-bracket
+                        |signup
+                .form-group.switch-auth
+                    p already have account ? 
+                        a(href="signin") signin now

@@ -1,0 +1,11 @@
+.row.pagination-container
+        .col-xs-12.col-sm-6
+            .pagination
+                button.btn.btn-light(disabled=prevPageIndex=='null')
+                    a(href="post?pageIndex="+prevPageIndex ) 
+                        i.fa-solid.fa-arrow-left
+                        |prev
+                button.btn.btn-light
+                    a(href="post?pageIndex="+nextPageIndex)
+                        |next
+                        i.fa-solid.fa-arrow-right

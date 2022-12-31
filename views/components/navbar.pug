@@ -1,16 +1,38 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand(href='#') postApp
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
+  a.navbar-brand(href='#') App
+  button.navbar-toggler(type='button' 
+                        data-toggle='collapse' 
+                        data-target='#navbarText' 
+                        aria-controls='navbarText'
+                        aria-expanded='false' 
+                        aria-label='Toggle navigation')
+    i.fa-solid.fa-bars
   #navbarText.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
+    ul.navbar-nav
       li.nav-item.active
-        a.nav-link(href='#') home
-      li.nav-item
-        a.nav-link(href='#') create post
-      li.nav-item
-        a.nav-link(href='#') edit post
-      li.nav-item
-        a.nav-link(href='#') signin
-      li.nav-item
-        a.nav-link(href='#') edit post
+        a.nav-link(href='/api/post') 
+          i.fa-solid.fa-house
+          |home
+      -if (isAuth)
+        li.nav-item
+          a.nav-link(href='/api/post/create') 
+            i.fa-solid.fa-plus 
+            |create post
+      -if (!isAuth)
+        li.nav-item
+          a.nav-link(href='/api/user/signin') 
+            i.fa-solid.fa-arrow-right-to-bracket
+            |signin
+        li.nav-item
+          a.nav-link(href='/api/user/signup') 
+            i.fa-solid.fa-user-plus
+            |signup
+      -if (isAuth)
+        li.nav-item
+            a.nav-link(href='/api/user/profile') 
+              i.fa-solid.fa-user-circle
+              |profile
+        li.nav-item
+          a.nav-link(href='/api/user/logout') 
+            i.fa-solid.fa-user-plus
+            |logout

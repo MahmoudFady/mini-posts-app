@@ -1,0 +1,26 @@
+extends ../layout.pug
+block content
+    .row.create-post
+        - if(errors)
+            each msg in errors
+                .col-xs-10-col-sm-8.col-md-6
+                    include ../components/alert
+        .col-xs-10-col-sm-8.col-md-6
+            form(action="" method="post" enctype="multipart/form-data")
+                .form-group 
+                    h3 create post
+                .form-group
+                    textarea.form-control(type="text" placeholder="type . . ." name="content")
+                .form-group.post-file-input 
+                    input(type="file", name="postImage")
+                .form-group
+                    button#imagePicker(type='button')
+                        i.fa-solid.fa-image
+                .form-group.image-container
+                    img.image-preview(alt="")
+                input(type="hidden" name="_csrf" value=csrfToken)
+                .form-group
+                    button(class="btn" type="submit"  ) create
+        -if (successMsg)
+            .col-xs-10-col-sm-8.col-md-6
+                    include ../components/success-alert

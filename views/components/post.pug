@@ -1,0 +1,12 @@
+.post-hook 
+    .header 
+        h6 
+            i.fa.fa-user
+            |#{post.creator.name}
+    p.content #{post.content}
+    -if (post.image)
+        img(src=post.image , alt="")
+    -if (post.creator.name == userId)
+        button 
+            a(href="#")
+                i.fa-solid.fa-trash

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/35651701ba.js" crossorigin="anonymous"> </script>
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/main.css">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="/api/post"> <i class="fa-solid fa-house"></i>home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/api/post/create"> <i class="fa-solid fa-plus"> </i>create post</a></li>
+          <li class="nav-item"><a class="nav-link" href="/api/user/signin"> <i class="fa-solid fa-arrow-right-to-bracket"></i>signin</a></li>
+          <li class="nav-item"><a class="nav-link" href="/api/user/signup"> <i class="fa-solid fa-user-plus"></i>signup</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row auth">
+        <div class="col-xs-10-col-sm-8 col-md-6">
+          <form action="signup" method="post"> 
+            <div class="form-group"> 
+              <h3>signup</h3>
+            </div>
+            <div class="form-group"><i class="fa-solid fa-user"></i>
+              <input class="form-control" type="text" placeholder="name . . ." name="name">
+            </div>
+            <div class="form-group"><i class="fa-solid fa-envelope"></i>
+              <input class="form-control" type="email" placeholder="email . . ." name="email">
+            </div>
+            <div class="form-group"><i class="fa-solid fa-lock"></i>
+              <input class="form-control" type="password" placeholder="password . . ." name="password">
+            </div>
+            <div class="form-group">
+              <button class="btn" type="submit"> <i class="fa-solid fa-arrow-right-to-bracket"></i>signup</button>
+            </div>
+            <div class="form-group switch-auth">
+              <p>already have account ? <a href="signin">signin now</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/public/jquery/jquery.min.js"> </script>
+    <script src="/public/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
